@@ -1,0 +1,109 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f8ff;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #4A90E2;
+    text-shadow: 2px 2px 5px #ccc;
+}
+
+.bingo-container {
+    display: flex;
+    justify-content: center;
+}
+
+.bingo-card {
+    border-collapse: collapse;
+    margin: 10px;
+    background-color: #fff;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.bingo-card th, .bingo-card td {
+    width: 80px;
+    height: 80px;
+    border: 1px solid #ddd;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    user-select: none;
+    position: relative;
+    perspective: 1000px;
+}
+
+.bingo-card th {
+    background-color: #4A90E2;
+    color: white;
+    font-size: 26px;
+    text-transform: uppercase;
+    padding: 10px;
+}
+
+.bingo-card td {
+    background-color: #F9F9F9;
+    color: #333;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease-in-out;
+    position: relative;
+}
+
+.bingo-card td.flip .front {
+    transform: rotateY(180deg);
+}
+
+.bingo-card td.flip .back {
+    transform: rotateY(0deg);
+}
+
+.bingo-card .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #FF4C4C;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.bingo-card .front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden;
+    transform: rotateY(0deg);
+}
+
+#reshuffle-button {
+    margin: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4A90E2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#reshuffle-button:hover {
+    background-color: #357ABD;
+}
